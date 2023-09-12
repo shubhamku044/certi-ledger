@@ -1,0 +1,47 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    container_name: certi-ledger-container
+    networks:
+      - certi-ledger-network
+    volumes:
+      - postgresData:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: certiledger
+      POSTGRES_PASSWORD: certiledger
+      POSTGRES_DB: certiledger
+  server:
+    build:
+      context: './server'
+      dockerfile: Dockerfile
+    ports:
+      - 5500:5500
+    container_name: certi-ledger-server-container
+    networks:
+      - certi-ledger-network
+    env_file: ./server/.env.local
+    volumes:
+      - ./server:/app
+    depends_on:
+      - postgres
+  client:
+    build:
+      context: './client'
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    container_name: certi-ledger-client-container
+    networks:
+      - certi-ledger-network
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    depends_on:
+      - server
+networks:
+  certi-ledger-network:
+volumes:
+  postgresData:
