@@ -10,7 +10,6 @@ app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cors());
 
-
 app.get('/health', (_: Request, res: Response) => {
   res.status(200).json({
     health: 'Up and running'
