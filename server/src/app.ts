@@ -18,7 +18,6 @@ app.get('/health', (_: Request, res: Response) => {
 });
 app.post('/registerrecipient', (req: Request, res: Response) => {
   try {
-    // Extract user data from the request body
     const {
       username,
       password,
@@ -26,10 +25,6 @@ app.post('/registerrecipient', (req: Request, res: Response) => {
       lastName,
       email,
     } = req.body;
-
-    // You can perform any validation or database operations here if needed.
-
-    // Return the same data as a response
     const userData = {
       username,
       password,
@@ -37,7 +32,6 @@ app.post('/registerrecipient', (req: Request, res: Response) => {
       lastName,
       email,
     };
-
     res.status(200).json(userData);
   } catch (error) {
     console.error(error);
