@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "app.js",
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"npx tsc -w\" \"nodemon ./dist/server.js\"",
