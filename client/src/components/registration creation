@@ -1,0 +1,58 @@
+//HTML CODE
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Express Form</title>
+</head>
+<body>
+  <form action="/submit" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+
+
+Typescript
+import express, { Request, Response } from 'express';
+import bodyParser from 'body-parser';
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.get('/', (req: Request, res: Response) => {
+  res.sendFile(__dirname + '/index.html'); // Create an HTML form
+});
+
+app.post('/submit', (req: Request, res: Response) => {
+  const { username, password, firstName, lastName, email } = req.body;
+  console.log('User Details:');
+  console.log(`Username: ${username}`);
+  console.log(`Password: ${password}`);
+  console.log(`First Name: ${firstName}`);
+  console.log(`Last Name: ${lastName}`);
+  console.log(`Email: ${email}`);
+  res.send('Data received and logged successfully!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
