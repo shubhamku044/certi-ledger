@@ -1,6 +1,18 @@
+import { useEffect } from 'react';
+
 const Registeration = () => {
+  const formSubmit = () => { };
+  useEffect(() => {
+
+  }, []);
+
   return (
-    <div className="text-red-50">Registeration</div>
+    <>
+      <form>
+        <input />
+
+      </form>
+    </>
   );
 };
 

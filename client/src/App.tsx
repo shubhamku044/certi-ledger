@@ -1,10 +1,12 @@
 import Registeration from './components/Registeration';
-function App() {
+import { Routes, Route } from 'react-router-dom';
 
+function App() {
   return (
     <>
-      <h1 className='text-red-500'>Certi Ledger</h1>
-      <Registeration />
+      <Routes>
+        <Route path='/' element={<Registeration />} ></Route>
+      </Routes>
     </>
   );
 }
