@@ -39,7 +39,16 @@ app.post('/registerrecipient', (req: Request, res: Response) => {
     res.status(500).json({ error: 'An error occurred while registering the recipient.' });
   }
 });
-
+app.post('/loginpage', (req: Request, res: Response) => {
+  try {
+    const { username, password } = req.body;
+    const loginData = { username, password };
+    res.status(200).json(loginData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred while processing the login request.' });
+  }
+});
 app.get('/', (_: Request, res: Response) => {
   res.status(200).json({
     health: 'Up and running'
