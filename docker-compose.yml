@@ -24,8 +24,7 @@ services:
       - certi-ledger-network
     env_file: ./server/.env.local
     volumes:
-      - ./server:/app
-      - .:/app/node_modules
+      - ./server:/usr/src/app
     depends_on:
       - postgres
   client:
@@ -38,8 +37,8 @@ services:
     networks:
       - certi-ledger-network
     volumes:
-      - ./client:/app
-      - .:/app/node_modules
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - server
 networks:

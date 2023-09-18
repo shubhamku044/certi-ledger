@@ -1,10 +1,12 @@
-FROM node:18
-WORKDIR /app
+FROM node:alpine
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-COPY ./package*.json ./
-RUN yarn install
-RUN yarn add -D esbuild@latest
-RUN npm install -g npm@9.8.1
-COPY . .
+COPY ./package*.json /usr/src/app/
+
+RUN npm install -g npm@10.1.0
+RUN npm install --save-dev esbuild@latest
+RUN npm install
+COPY . /usr/src/app/
 EXPOSE 8000
-CMD [ "yarn", "dev" ]
+CMD [ "npm", "run", "dev" ]

@@ -1,10 +1,11 @@
 FROM node:18
-WORKDIR /app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-COPY ./package.json ./
-COPY ./yarn.lock ./
-RUN yarn global add concurrently typescript
-RUN yarn install
-COPY . .
+COPY ./package*.json /usr/src/app/
+RUN npm install -g npm@10.1.0
+RUN npm install -g concurrently typescript
+RUN npm install
+COPY . /usr/src/app/
 EXPOSE 5500
-CMD [ "yarn", "dev" ]
+CMD [ "npm", "run", "dev" ]
