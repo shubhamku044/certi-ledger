@@ -1,8 +1,13 @@
 import Registeration from './components/Registeration';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.title = 'CertiLedger | Create BlockChain based certificates';
+  }, []);
+
   return (
     <div>
       <Routes>
