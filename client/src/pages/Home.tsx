@@ -1,5 +1,5 @@
 import { AboutUs, ContactsUs, Features, Header, Hero, Register } from '../components/landingPage';
-import { Helmet } from 'react-helmet-async';
+
 const Home = () => {
   return (
     <>
