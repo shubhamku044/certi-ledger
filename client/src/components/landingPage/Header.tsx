@@ -2,15 +2,15 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <nav className="fixed z-10 top-0 left-0 w-full backdrop-blur-lg border-b border-white">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-6 text-white">
+    <nav className="fixed left-0 top-0 z-10 w-full border-b border-white backdrop-blur-lg">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 text-white">
         <div>
-          <h3 className="font-bold text-2xl tracking-wider">
+          <h3 className="text-2xl font-bold tracking-wider">
             CertiLedger
           </h3>
         </div>
         <div>
-          <ul className="flex items-center font-medium space-x-8">
+          <ul className="flex items-center space-x-8 font-medium">
             <li>
               <a href="#" className="pointer">
                 About Us
@@ -34,7 +34,7 @@ const Header = () => {
             <li>
               <NavLink
                 to={'/'}
-                className="pointer block bg-[#9C3DF3] px-8 py-2 rounded-md font-semibold"
+                className="pointer block rounded-md bg-[#9C3DF3] px-8 py-2 font-semibold"
               >
                 Login
               </NavLink>

@@ -6,7 +6,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -107,6 +108,10 @@
       "error",
       "always"
     ],
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ]
   }
 }

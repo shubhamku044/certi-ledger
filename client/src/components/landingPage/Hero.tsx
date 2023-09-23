@@ -8,28 +8,28 @@ const Hero = () => {
 
   return (
     <>
-      <div className="min-h-screen relative overflow-hidden bg-[#15021D]/50">
+      <div className="relative min-h-screen overflow-hidden bg-[#15021D]/50">
         <Atropos
           style={{ background: 'transparent' }}
-          className='my-atropos'
+          className="my-atropos"
           activeOffset={40}
           shadowScale={0}
-          component='div'
+          component="div"
           shadow={false}
           highlight={false}
           scaleChildren
         >
           <div
-            className="flex items-center justify-center min-h-screen"
+            className="flex min-h-screen items-center justify-center"
             data-atropos-opacity="1;0.8"
             data-atropos-offset="4"
           >
             <h1
               className="font-black"
             >
-              <span className="text-[#792ec7] block text-3xl tracking-wide">Create Certificates on</span>
+              <span className="block text-3xl tracking-wide text-[#792ec7]">Create Certificates on</span>
               <span
-                className="text-[10rem] block tracking-wider"
+                className="block text-[10rem] tracking-wider"
                 style={{
                   background: 'linear-gradient(90deg, #792EC7 0%, rgba(244, 233, 255, 0.50) 50%, #752EC8 100%)',
                   backgroundClip: 'text',
@@ -44,14 +44,14 @@ const Hero = () => {
             </h1>
           </div>
           <div
-            className='absolute top-0 left-0 w-full h-full'
+            className="absolute left-0 top-0 h-full w-full"
             data-atropos-offset="-4"
           >
             <Stars />
           </div>
         </Atropos>
         <div
-          className='absolute top-0 left-0 w-full h-full hero-bg'
+          className="hero-bg absolute left-0 top-0 h-full w-full"
           style={{
             background: `url(${bgImage})`,
             backgroundPosition: 'center',
