@@ -24,9 +24,8 @@ const Registration = () => {
     e.preventDefault();
 
     // Step 7: Add validation and error handling as needed
-    if (formData.username &&formData.firstName && formData.password && formData.email) {
+    if (formData.username && formData.firstName && formData.password && formData.email) {
       // You can send the formData to an API for registration here
-      console.log('Form Data:', formData);
       // Reset the form after submission
       setFormData({
         username: '',
@@ -105,4 +104,3 @@ const Registration = () => {
 };
 
 export default Registration;
-

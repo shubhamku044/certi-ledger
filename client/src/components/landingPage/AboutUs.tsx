@@ -10,17 +10,17 @@ const AboutUs = () => {
         background: 'linear-gradient(180deg, #170220, #170220)'
       }}
     >
-      <div className="max-w-7xl mx-auto flex flex-col space-y-24">
+      <div className="mx-auto flex max-w-7xl flex-col space-y-24">
         <div className="flex items-center space-x-8">
           <div>
             <img
               src={abtCompany}
-              alt='About company'
-              className='w-52'
+              alt="About company"
+              className="w-52"
             />
           </div>
-          <div className="space-y-2 max-w-sm">
-            <h2 className="font-bold text-xl">
+          <div className="max-w-sm space-y-2">
+            <h2 className="text-xl font-bold">
               About Company
             </h2>
             <p>
@@ -29,16 +29,16 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-8 justify-start flex-row-reverse">
+        <div className="flex flex-row-reverse items-center justify-start gap-8">
           <div>
             <img
               src={abtmission}
-              alt='About company'
-              className='w-52'
+              alt="About company"
+              className="w-52"
             />
           </div>
-          <div className="space-y-2 max-w-sm">
-            <h2 className="font-bold text-xl text-end">
+          <div className="max-w-sm space-y-2">
+            <h2 className="text-end text-xl font-bold">
               Our Mission
             </h2>
             <p className="text-end">
@@ -51,12 +51,12 @@ const AboutUs = () => {
           <div>
             <img
               src={abtcases}
-              alt='About company'
-              className='w-52'
+              alt="About company"
+              className="w-52"
             />
           </div>
-          <div className="space-y-2 max-w-sm">
-            <h2 className="font-bold text-xl">
+          <div className="max-w-sm space-y-2">
+            <h2 className="text-xl font-bold">
               Use Cases
             </h2>
             <p>

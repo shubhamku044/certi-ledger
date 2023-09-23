@@ -10,7 +10,7 @@ const Stars = () => {
   }, []);
 
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await container;
+    container;
   }, []);
 
   return (
