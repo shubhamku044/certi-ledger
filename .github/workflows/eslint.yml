@@ -1,8 +1,10 @@
-name: Lint
-on: [ pull_request, push ]
+name: ESLint Check for Pull Requests
+
+on: [ pull_request ]
+
 jobs:
-  build:
-    name: Test
+  eslint:
+    name: Run ESLint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,10 +18,18 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
 
-      - name: Install depedencies
+      - name: Install Client depedencies
         working-directory: ./client
         run: npm install
 
-      - name: Run ESLint
+      - name: Run ESLint on Client
+        working-directory: ./client
+        run: npm run lint
+
+      - name: Install Server depedencies
+        working-directory: ./server
+        run: npm install
+
+      - name: Run ESLint on Server
         working-directory: ./client
         run: npm run lint
