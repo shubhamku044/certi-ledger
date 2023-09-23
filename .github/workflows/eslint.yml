@@ -1,0 +1,25 @@
+name: Lint
+on: [ pull_request, push ]
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x, 18.x ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup node js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+
+      - name: Install depedencies
+        working-directory: ./client
+        run: npm install
+
+      - name: Run ESLint
+        working-directory: ./client
+        run: npm run lint
