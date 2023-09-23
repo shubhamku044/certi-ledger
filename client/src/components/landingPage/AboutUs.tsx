@@ -1,4 +1,6 @@
 import abtCompany from '../../assets/company.svg';
+import abtmission from '../../assets/rocket.svg';
+import abtcases from '../../assets/use_cases.svg';
 
 const AboutUs = () => {
   return (
@@ -30,7 +32,7 @@ const AboutUs = () => {
         <div className="flex items-center gap-8 justify-start flex-row-reverse">
           <div>
             <img
-              src={abtCompany}
+              src={abtmission}
               alt='About company'
               className='w-52'
             />
@@ -48,7 +50,7 @@ const AboutUs = () => {
         <div className="flex items-center space-x-8">
           <div>
             <img
-              src={abtCompany}
+              src={abtcases}
               alt='About company'
               className='w-52'
             />
