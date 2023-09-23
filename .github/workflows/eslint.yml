@@ -45,6 +45,6 @@ jobs:
         working-directory: ./server
         run: npm install
 
-      - name: Run ESLint on Server
+      - name: Run ESLint for Server
         working-directory: ./server
         run: npm run lint
