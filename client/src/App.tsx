@@ -8,17 +8,6 @@ function App() {
     document.title = 'CertiLedger | Create BlockChain based certificates';
   }, []);
 
-  const unused_variable;
-
-  const doubleQuote = "Hello there"
-
-
-
-  // extra lines
-  //
-  //
-  //
-
   return (
     <div>
       <Routes>
