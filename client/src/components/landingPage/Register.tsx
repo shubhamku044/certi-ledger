@@ -1,9 +1,14 @@
+import bgImage from '../../assets/bg-register.png';
+
 const Register = () => {
   return (
     <section
-      className="py-24 min-h-screen flex items-center justify-center"
+      className="py-24 min-h-screen flex items-center justify-center register-con"
       style={{
-        background: 'linear-gradient(180deg, #170220, #2D0E43, #170220)'
+        background: `url(${bgImage})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-center">
@@ -22,7 +27,7 @@ const Register = () => {
           <button className="border-4 px-10 py-2 rounded-lg bg-white text-[#6D30A4] font-black tracking-wide text-lg border-[#6d30a4] mx-auto">Register Now</button>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

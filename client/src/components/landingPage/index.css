@@ -3,6 +3,10 @@
   animation: opacityAnimation 4s linear infinite alternate;
 }
 
+.register-con {
+  
+}
+
 @keyframes opacityAnimation {
   0% {
     opacity: 0.2;
