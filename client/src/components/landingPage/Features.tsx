@@ -1,4 +1,10 @@
-const FeatureCard = () => {
+interface IFeatureCard {
+  imgSrc: string;
+  title: string;
+  desc: string;
+}
+
+const FeatureCard = ({ imgSrc, title, desc }: IFeatureCard) => {
   return (
     <div
       style={{
@@ -6,15 +12,17 @@ const FeatureCard = () => {
       }}
       className="px-10 py-10 border-2 rounded-lg flex items-center gap-8"
     >
-      <div>
-        logo
-      </div>
+      <img
+        src={imgSrc}
+        alt='About company'
+        className='w-52'
+      />
       <div className="flex flex-col gap-4">
         <h3 className="font-bold text-2xl">
-          Fully customizable
+          {title}
         </h3>
         <p>
-          Tailor CertiLedger to your needs with powerful customization options
+          {desc}
         </p>
       </div>
     </div>
@@ -32,10 +40,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto flex flex-col space-y-24">
         <h2 className="text-5xl font-bold mx-auto">Features</h2>
         <div className="grid grid-cols-2 gap-6">
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
+          <FeatureCard imgSrc={} title="" desc="" />
+          <FeatureCard imgSrc={} title="" desc="" />
+          <FeatureCard imgSrc={} title="" desc="" />
+          <FeatureCard imgSrc={} title="" desc="" />
         </div>
       </div>
     </section>

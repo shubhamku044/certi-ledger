@@ -1,3 +1,5 @@
+import abtCompany from '../../assets/company.svg';
+
 const AboutUs = () => {
   return (
     <section
@@ -9,7 +11,11 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto flex flex-col space-y-24">
         <div className="flex items-center space-x-8">
           <div>
-            logo
+            <img
+              src={abtCompany}
+              alt='About company'
+              className='w-52'
+            />
           </div>
           <div className="space-y-2 max-w-sm">
             <h2 className="font-bold text-xl">
@@ -23,7 +29,11 @@ const AboutUs = () => {
         </div>
         <div className="flex items-center gap-8 justify-start flex-row-reverse">
           <div>
-            logo
+            <img
+              src={abtCompany}
+              alt='About company'
+              className='w-52'
+            />
           </div>
           <div className="space-y-2 max-w-sm">
             <h2 className="font-bold text-xl text-end">
@@ -37,7 +47,11 @@ const AboutUs = () => {
         </div>
         <div className="flex items-center space-x-8">
           <div>
-            logo
+            <img
+              src={abtCompany}
+              alt='About company'
+              className='w-52'
+            />
           </div>
           <div className="space-y-2 max-w-sm">
             <h2 className="font-bold text-xl">
