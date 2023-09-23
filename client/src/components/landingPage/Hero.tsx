@@ -29,7 +29,7 @@ const Hero = () => {
             >
               <span className="text-[#792ec7] block text-3xl tracking-wide">Create Certificates on</span>
               <span
-                className="text-[10rem] block tracking-wider"
+                className="text-9xl 2xl:text-[10rem] block tracking-wider"
                 style={{
                   background: 'linear-gradient(90deg, #792EC7 0%, rgba(244, 233, 255, 0.50) 50%, #752EC8 100%)',
                   backgroundClip: 'text',
