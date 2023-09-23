@@ -1,3 +1,8 @@
+import customizableimage from '../../assets/customizable.svg';
+import batchwiseimage from '../../assets/batch.svg';
+import tamperimage from '../../assets/tamper.svg';
+import verifyimage from '../../assets/verify.svg';
+
 interface IFeatureCard {
   imgSrc: string;
   title: string;
@@ -40,10 +45,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto flex flex-col space-y-24">
         <h2 className="text-5xl font-bold mx-auto">Features</h2>
         <div className="grid grid-cols-2 gap-6">
-          <FeatureCard imgSrc={} title="" desc="" />
-          <FeatureCard imgSrc={} title="" desc="" />
-          <FeatureCard imgSrc={} title="" desc="" />
-          <FeatureCard imgSrc={} title="" desc="" />
+          <FeatureCard imgSrc={customizableimage} title="Fully customizable" desc="Tailor CertiLedger to your needs with powerful customization options" />
+          <FeatureCard imgSrc={batchwiseimage} title="Batch-wise Issuance" desc="Efficiently issue certificates in batches, saving time." />
+          <FeatureCard imgSrc={tamperimage} title="Tamperproof" desc="Ensure the integrity of your certificates with tamper-proof  security, safeguarding against unauthorised alterations" />
+          <FeatureCard imgSrc={verifyimage} title="Instant Verification" desc="Experience seamless trust with instant certificate verification, providing quick and reliable confirmation of authenticity" />
         </div>
       </div>
     </section>
