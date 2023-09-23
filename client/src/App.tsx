@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 function App() {
   useEffect(() => {
     document.title = 'CertiLedger | Create BlockChain based certificates';
-    console.log('title added');
   }, []);
 
   return (
