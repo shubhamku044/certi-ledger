@@ -3,8 +3,8 @@ name: ESLint Check for Pull Requests
 on: [ pull_request ]
 
 jobs:
-  eslint:
-    name: Run ESLint
+  eslint-client:
+    name: Run ESLint for Client
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,14 +22,29 @@ jobs:
         working-directory: ./client
         run: npm install
 
-      - name: Run ESLint on Client
+      - name: Run ESLint for Client
         working-directory: ./client
         run: npm run lint
+
+  eslint-server:
+    name: Run ESLint for Server
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x, 18.x ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup node js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
 
       - name: Install Server depedencies
         working-directory: ./server
         run: npm install
 
-      - name: Run ESLint on Server
+      - name: Run ESLint for Server
         working-directory: ./server
         run: npm run lint
