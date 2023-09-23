@@ -1,0 +1,73 @@
+name: test-lint
+
+on: [ pull_request ]
+
+jobs:
+  determine-modified-folder:
+    name: Determine Modified Folder
+    runs-on: ubuntu-latest
+    outputs:
+      modified_folders: ${{ steps.set-modified-folders.outputs.modified_folders }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Determine Modified Folders
+        id: set-modified-folders
+        run: |
+          changes=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
+          modified_folders=""
+          for file in $changes; do
+            folder=$(dirname $file)
+            if [[ "$folder" == "client" ]]; then
+              modified_folders="client"
+            elif [[ "$folder" == "server" ]]; then
+              modified_folders="server"
+            fi
+          done
+          echo "::set-output name=modified_folders::$modified_folders"
+        shell: bash
+
+  eslint-client:
+    name: Run ESLint for Client
+    needs: determine-modified-folder
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x, 18.x ]
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Client Dependencies and Run ESLint
+        run: |
+          modified_folders="${{ needs.determine-modified-folder.outputs.modified_folders }}"
+          if [[ "$modified_folders" == "client" ]] || [[ "$modified_folders" == "client server" ]]; then
+            cd ./client
+            npm install
+            npm run lint
+          fi
+
+  eslint-server:
+    name: Run ESLint for Server
+    needs: determine-modified-folder
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x, 18.x ]
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Server Dependencies and Run ESLint
+        run: |
+          modified_folders="${{ needs.determine-modified-folder.outputs.modified_folders }}"
+          if [[ "$modified_folders" == "server" ]] || [[ "$modified_folders" == "client server" ]]; then
+            cd ./server
+            npm install
+            npm run lint
+          fi
