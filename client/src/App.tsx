@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 function App() {
   useEffect(() => {
     document.title = 'CertiLedger | Create BlockChain based certificates';
+
+    const unusedVariable = 'somethig'
   }, []);
 
   return (
